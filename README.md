@@ -1,5 +1,7 @@
 # Excel_Auto_Timestamp
 
+** see the document "How the auto timestamp works (picture explaination)" for a visual explaination. **
+
 Summary: Timestamp function which will place a timestamp on a cell whenever another cell in that row is changed. The changes are based on a hash created by the string values of each cell in each row respectively. It is done this way instead of just placing a timestamp whenever a cell is modified because this will allow the user to undo a change. Consider changing a cell's value from 0 to 0, the value in the hash has not changed so the timestamp will not be updated, but excel detects this as a modification so without the hash the timestamp would update. Also consider trying to undo a change like this so excel gives you back your old timestamp value, well because the timestamp column was updated the undo with undo the timestamp update, but this changes a cell in the row so the timestamp is once again updated, the regression is solved with the string hash of the row's values.
 
 
